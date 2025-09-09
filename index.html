@@ -1,380 +1,508 @@
-
+<!DOCTYPE html>
 <html lang="en">
- <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1" name="viewport"/>
-  <title>
-   Profile & Projects Page
-  </title>
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <title>Profile & Projects & Contact</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
-/>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+  />
   <style>
-   body {
+    body {
       font-family: "Inter", sans-serif;
     }
-  html {
-    scroll-behavior: smooth;
-  }
-
-  /* Fade-in animation */
-  .fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-  }
-
-  .fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  /* Profile picture floating animation */
-  @keyframes float {
-    0%, 100% {
-      transform: translateY(0) rotate(-12deg);
+    html {
+      scroll-behavior: smooth;
     }
-    50% {
-      transform: translateY(-10px) rotate(-12deg);
+    /* Fade-in animation */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
     }
-  }
-
-  .profile-picture-animate {
-    animation: float 4s ease-in-out infinite;
-  }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    /* Profile picture floating animation */
+    @keyframes float {
+      0%,
+      100% {
+        transform: translateY(0) rotate(-12deg);
+      }
+      50% {
+        transform: translateY(-10px) rotate(-12deg);
+      }
+    }
+    .profile-picture-animate {
+      animation: float 4s ease-in-out infinite;
+    }
   </style>
- </head>
- <body class="bg-[#0f172a] text-white relative overflow-x-hidden">
+</head>
+<body class="bg-[#0f172a] text-white relative overflow-x-hidden">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
-   <header class="flex justify-between items-center text-xs text-gray-300 font-light tracking-wide">
-    <div class="flex items-center space-x-1">
-     <span>
-     CRISTOFER AMORES
-     </span>
-    </div>
-<nav class="hidden sm:flex space-x-6">
-  <a class="hover:text-pink-600 transition-colors duration-300 font-bold drop-shadow-md text-lg border border-gray-300 px-2 py-1 rounded" 
-  href="#about">
-    About
-  </a>
-  <a class="hover:text-pink-600 transition-colors duration-300 font-bold drop-shadow-md text-lg border border-gray-300 px-2 py-1 rounded" 
-  href="#skills">
-    Skills
-  </a>
-<a
-  class="hover:text-pink-600 transition-colors duration-300 font-bold drop-shadow-md text-lg border border-gray-300 px-2 py-1 rounded"
-  href="#projects"
-  id="projects-link"
->
-  Projects
-</a>
-  <a class="hover:text-pink-600 transition-colors duration-300 font-bold drop-shadow-md text-lg border border-gray-300 px-2 py-1 rounded" href="#">
-    Contact
-  </a>
-  <a class="hover:text-pink-600 transition-colors duration-300 font-bold drop-shadow-md text-lg border border-gray-300 px-2 py-1 rounded" href="#">
-    Resume
-  </a>
-  <a class="hover:text-pink-600 transition-colors duration-300 font-bold drop-shadow-md text-lg border border-gray-300 px-2 py-1 rounded" href="#">
-    Niche
-  </a>
-</nav>
-    <div class="flex items-center space-x-3 text-gray-300 text-sm">
-    </div>
-   </header>
+    <!-- Header -->
+    <header class="flex justify-between items-center text-xs text-gray-300 font-light tracking-wide relative">
+      <div class="flex items-center space-x-1">
+        <span>CRISTOFER AMORES</span>
+      </div>
+
+      <!-- Desktop nav -->
+      <nav class="hidden sm:flex space-x-6">
+        <a
+          class="hover:text-pink-600 transition-colors duration-300 font-bold drop-shadow-md text-lg border border-gray-300 px-2 py-1 rounded"
+          href="#about"
+          >About</a
+        >
+        <a
+          class="hover:text-pink-600 transition-colors duration-300 font-bold drop-shadow-md text-lg border border-gray-300 px-2 py-1 rounded"
+          href="#skills"
+          >Skills</a
+        >
+        <a
+          class="hover:text-pink-600 transition-colors duration-300 font-bold drop-shadow-md text-lg border border-gray-300 px-2 py-1 rounded"
+          href="#projects"
+          id="projects-link"
+          >Projects</a
+        >
+        <a
+          class="hover:text-pink-600 transition-colors duration-300 font-bold drop-shadow-md text-lg border border-gray-300 px-2 py-1 rounded"
+          href="#contact"
+          >Contact</a
+        >
+        <a
+          class="hover:text-pink-600 transition-colors duration-300 font-bold drop-shadow-md text-lg border border-gray-300 px-2 py-1 rounded"
+          href="#resume"
+          >Resume</a
+        >
+        <a
+          class="hover:text-pink-600 transition-colors duration-300 font-bold drop-shadow-md text-lg border border-gray-300 px-2 py-1 rounded"
+          href="#niche"
+          >Niche</a
+        >
+      </nav>
+
+      <!-- Mobile menu button -->
+      <button
+        id="mobile-menu-button"
+        class="sm:hidden text-gray-300 focus:outline-none"
+        aria-label="Toggle menu"
+      >
+        <i class="fas fa-bars text-2xl"></i>
+      </button>
+    </header>
+
+    <!-- Mobile nav menu -->
+    <nav
+      id="mobile-menu"
+      class="sm:hidden mt-2 space-y-2 text-center text-gray-300 font-bold text-lg border border-gray-300 rounded px-4 py-2 hidden"
+    >
+      <a
+        class="block hover:text-pink-600 transition-colors duration-300 border border-gray-300 px-2 py-1 rounded"
+        href="#about"
+        >About</a
+      >
+      <a
+        class="block hover:text-pink-600 transition-colors duration-300 border border-gray-300 px-2 py-1 rounded"
+        href="#skills"
+        >Skills</a
+      >
+      <a
+        class="block hover:text-pink-600 transition-colors duration-300 border border-gray-300 px-2 py-1 rounded"
+        href="#projects"
+        >Projects</a
+      >
+      <a
+        class="block hover:text-pink-600 transition-colors duration-300 border border-gray-300 px-2 py-1 rounded"
+        href="#contact"
+        >Contact</a
+      >
+      <a
+        class="block hover:text-pink-600 transition-colors duration-300 border border-gray-300 px-2 py-1 rounded"
+        href="#resume"
+        >Resume</a
+      >
+      <a
+        class="block hover:text-pink-600 transition-colors duration-300 border border-gray-300 px-2 py-1 rounded"
+        href="#niche"
+        >Niche</a
+      >
+    </nav>
   </div>
 
+  <!-- Main content: Profile intro and image side by side -->
   <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6 flex flex-col md:flex-row md:justify-between md:items-start gap-10 fade-in">
-   <section class="max-w-lg text-[12px] sm:text-[14px] md:text-[16px] leading-tight text-gray-300 font-light">
-    <p class="mb-2">
-     Hello! I am
-    </p>
-    <h1 class="text-[18px] sm:text-[20px] md:text-[24px] font-semibold mb-2 text-white">
-     Cristofer Amores
-    </h1>
-    <p class="mb-3 text-pink-600 text-[14px] sm:text-[16px] md:text-[18px] font-semibold">
-     Software Engineer / Aspiring Virtual Assistant
-    </p>
-    <p class="mb-5">
-     I'm a passionate Software Engineer based in Philippines, a degree holder in Information Systems. Alongside my studies, I'm working as a Software Development Engineer Intern at Philippines Statistics Authority BARMM and am the business owner of Unico and Unica Mango Cheese Milk. I have a strong interest in Software Development and am committed to creating visually stunning and user-friendly web application. I'm looking forward to exploring new opportunities to enhance my skills and passion.
-    </p>
-    <a class="inline-block text-[12px] sm:text-[14px] md:text-[16px] font-semibold border border-pink-600 text-pink-600 px-4 py-2 rounded-sm hover:bg-pink-600 hover:text-white transition-colors duration-300" href="#">
-     Get my resume
-    </a>
-   </section>
-   <section class="relative w-48 h-48 md:w-64 md:h-64 flex-shrink-0">
-    <div class="absolute -rotate-12 border-4 border-pink-600 w-48 h-48 md:w-64 md:h-64 top-0 left-0 shadow-[0_0_60px_#e11d48] rounded-md"></div>
-    <img alt="Profile image of a man in blue shirt with arms crossed rotated slightly" class="absolute top-4 left-4 w-40 h-40 md:w-56 md:h-56 object-cover rounded-md profile-picture-animate" src="profilepic.JPG"/>
-   </section>
+    <section class="max-w-lg text-[12px] sm:text-[14px] md:text-[16px] leading-tight text-gray-300 font-light">
+      <p class="mb-2">Hello! I am</p>
+      <h1 class="text-[18px] sm:text-[20px] md:text-[24px] font-semibold mb-2 text-white">
+        Cristofer Amores
+      </h1>
+      <p class="mb-3 text-pink-600 text-[14px] sm:text-[16px] md:text-[18px] font-semibold">
+        Software Engineer / Aspiring Virtual Assistant
+      </p>
+      <p class="mb-5">
+        I'm a passionate Software Engineer based in Philippines, a degree holder in Information Systems. Alongside my studies, I'm working as a Software Development Engineer Intern at Philippines Statistics Authority BARMM and am the business owner of Unico and Unica Mango Cheese Milk. I have a strong interest in Software Development and am committed to creating visually stunning and user-friendly web application. I'm looking forward to exploring new opportunities to enhance my skills and passion.
+      </p>
+      <a
+        class="inline-block text-[12px] sm:text-[14px] md:text-[16px] font-semibold border border-pink-600 text-pink-600 px-4 py-2 rounded-sm hover:bg-pink-600 hover:text-white transition-colors duration-300"
+        href="https://www.mediafire.com/file/3z7sx1tyrbjkd4y/amores+portfolio.pdf/file"
+        >Get my resume</a
+      >
+    </section>
+    <section class="relative w-48 h-48 md:w-64 md:h-64 flex-shrink-0">
+      <div
+        class="absolute -rotate-12 border-4 border-pink-600 w-48 h-48 md:w-64 md:h-64 top-0 left-0 shadow-[0_0_60px_#e11d48] rounded-md"
+      ></div>
+      <img
+        alt="Profile image of a man in blue shirt with arms crossed rotated slightly"
+        class="absolute top-4 left-4 w-40 h-40 md:w-56 md:h-56 object-cover rounded-md profile-picture-animate"
+        src="profilepic.JPG"
+      />
+    </section>
   </main>
 
   <div class="flex justify-center mt-12 fade-in">
-   <i class="fas fa-chevron-down text-pink-600 text-lg"></i>
+    <i class="fas fa-chevron-down text-pink-600 text-lg"></i>
   </div>
 
-  <section id="about" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-24 text-center fade-in">
-   <h2 class="text-white text-2xl font-normal mb-14">
-    About My
-   </h2>
-   <div class="flex flex-col md:flex-row justify-center gap-28 text-[12px] sm:text-[14px] md:text-[16px] font-light text-gray-300 max-w-5xl mx-auto">
-    <div class="max-w-[250px]">
-     <h3 class="text-pink-600 text-[14px] font-semibold mb-4">
-      Past
-     </h3>
-     <p>
-      I am an individual with a strong passion for technology, and I have discovered that programming is the field that truly resonates with me. Consequently, I dedicate countless hours to nurturing and developing my passion.
-     </p>
+  <section
+    id="about"
+    class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-24 text-center fade-in"
+  >
+    <h2 class="text-white text-2xl font-normal mb-14">About My</h2>
+    <div
+      class="flex flex-col md:flex-row justify-center gap-28 text-[12px] sm:text-[14px] md:text-[16px] font-light text-gray-300 max-w-5xl mx-auto"
+    >
+      <div class="max-w-[250px]">
+        <h3 class="text-pink-600 text-[14px] font-semibold mb-4">Past</h3>
+        <p>
+          I am an individual with a strong passion for technology, and I have
+          discovered that programming is the field that truly resonates with me.
+          Consequently, I dedicate countless hours to nurturing and developing
+          my passion.
+        </p>
+      </div>
+      <div class="max-w-[250px]">
+        <h3 class="text-pink-600 text-[14px] font-semibold mb-4">Present</h3>
+        <p>
+          I am a graduate of Bachelor of Science in Information Systems and
+          continue to pursue a career in this field to gain valuable experience
+          and further enhance my expertise, particularly in this area.
+        </p>
+      </div>
+      <div class="max-w-[250px]">
+        <h3 class="text-pink-600 text-[14px] font-semibold mb-4">Future</h3>
+        <p>
+          I'm excited about the future of programming and the opportunities it
+          offers. With my passion and skills, I’m confident I can make
+          meaningful contributions to the industry.
+        </p>
+      </div>
     </div>
-    <div class="max-w-[250px]">
-     <h3 class="text-pink-600 text-[14px] font-semibold mb-4">
-      Present
-     </h3>
-     <p>
-     I am a graduate of Bachelor of Science in Information Systems and continue to pursue a career in this field to gain valuable experience and further enhance my expertise, particularly in this area.
-     </p>
-    </div>
-    <div class="max-w-[250px]">
-     <h3 class="text-pink-600 text-[14px] font-semibold mb-4">
-      Future
-     </h3>
-     <p>
-     I'm excited about the future of programming and the opportunities it offers. With my passion and skills, I’m confident I can make meaningful contributions to the industry.
-     </p>
-    </div>
-   </div>
   </section>
 
-
-
-
-
-  
-  <section  id="skills"
-   class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-24 text-center fade-in">
-   <h2 class="text-white text-2xl font-normal mb-14">
-    Skills
-   </h2>
-   <div class="max-w-5xl mx-auto text-[12px] sm:text-[14px] md:text-[16px] font-light text-gray-300 space-y-8">
-    <div>
-     <h3 class="text-left text-pink-600 font-semibold mb-4">
-      Front End
-     </h3>
-     <div class="flex flex-wrap gap-3 justify-center md:justify-start">
-      <span class="bg-pink-900 text-pink-600 px-4 py-1 rounded text-[10px] sm:text-[12px] md:text-[14px] font-semibold">
-       HTML
-      </span>
-      <span class="bg-pink-900 text-pink-600 px-4 py-1 rounded text-[10px] sm:text-[12px] md:text-[14px] font-semibold">
-       JavaScript
-      </span>
-      <span class="bg-pink-900 text-pink-600 px-4 py-1 rounded text-[10px] sm:text-[12px] md:text-[14px] font-semibold">
-       Bootstrap
-      </span>
-      <span class="bg-pink-900 text-pink-600 px-4 py-1 rounded text-[10px] sm:text-[12px] md:text-[14px] font-semibold">
-       React
-      </span>
-      <span class="bg-pink-900 text-pink-600 px-4 py-1 rounded text-[10px] sm:text-[12px] md:text-[14px] font-semibold">
-       Tailwind
-      </span>
-      <span class="bg-pink-900 text-pink-600 px-4 py-1 rounded text-[10px] sm:text-[12px] md:text-[14px] font-semibold">
-       JQuery
-      </span>
-      <span class="bg-pink-900 text-pink-600 px-4 py-1 rounded text-[10px] sm:text-[12px] md:text-[14px] font-semibold">
-     Electron
-      </span>
-      <span class="bg-pink-900 text-pink-600 px-4 py-1 rounded text-[10px] sm:text-[12px] md:text-[14px] font-semibold">
-      Nativefier
-      </span>
-     </div>
+  <section
+    id="skills"
+    class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-24 text-center fade-in"
+  >
+    <h2 class="text-white text-2xl font-normal mb-14">Skills</h2>
+    <div
+      class="max-w-5xl mx-auto text-[12px] sm:text-[14px] md:text-[16px] font-light text-gray-300 space-y-8"
+    >
+      <div>
+        <h3 class="text-left text-pink-600 font-semibold mb-4">Front End</h3>
+        <div class="flex flex-wrap gap-3 justify-center md:justify-start">
+          <span
+            class="bg-pink-900 text-pink-600 px-4 py-1 rounded text-[10px] sm:text-[12px] md:text-[14px] font-semibold"
+            >HTML</span
+          >
+          <span
+            class="bg-pink-900 text-pink-600 px-4 py-1 rounded text-[10px] sm:text-[12px] md:text-[14px] font-semibold"
+            >JavaScript</span
+          >
+          <span
+            class="bg-pink-900 text-pink-600 px-4 py-1 rounded text-[10px] sm:text-[12px] md:text-[14px] font-semibold"
+            >Bootstrap</span
+          >
+          <span
+            class="bg-pink-900 text-pink-600 px-4 py-1 rounded text-[10px] sm:text-[12px] md:text-[14px] font-semibold"
+            >React</span
+          >
+          <span
+            class="bg-pink-900 text-pink-600 px-4 py-1 rounded text-[10px] sm:text-[12px] md:text-[14px] font-semibold"
+            >Tailwind</span
+          >
+          <span
+            class="bg-pink-900 text-pink-600 px-4 py-1 rounded text-[10px] sm:text-[12px] md:text-[14px] font-semibold"
+            >JQuery</span
+          >
+          <span
+            class="bg-pink-900 text-pink-600 px-4 py-1 rounded text-[10px] sm:text-[12px] md:text-[14px] font-semibold"
+            >Electron</span
+          >
+          <span
+            class="bg-pink-900 text-pink-600 px-4 py-1 rounded text-[10px] sm:text-[12px] md:text-[14px] font-semibold"
+            >Nativefier</span
+          >
+        </div>
+      </div>
+      <div>
+        <h3 class="text-left text-pink-600 font-semibold mb-4">Backend &amp; Database</h3>
+        <div class="flex flex-wrap gap-3 justify-center md:justify-start">
+          <span
+            class="bg-pink-900 text-pink-600 px-4 py-1 rounded text-[10px] sm:text-[12px] md:text-[14px] font-semibold"
+            >SQL SERVER</span
+          >
+          <span
+            class="bg-pink-900 text-pink-600 px-4 py-1 rounded text-[10px] sm:text-[12px] md:text-[14px] font-semibold"
+            >MYSQL</span
+          >
+          <span
+            class="bg-pink-900 text-pink-600 px-4 py-1 rounded text-[10px] sm:text-[12px] md:text-[14px] font-semibold"
+            >PHP</span
+          >
+          <span
+            class="bg-pink-900 text-pink-600 px-4 py-1 rounded text-[10px] sm:text-[12px] md:text-[14px] font-semibold"
+            >COMPOSER</span
+          >
+          <span
+            class="bg-pink-900 text-pink-600 px-4 py-1 rounded text-[10px] sm:text-[12px] md:text-[14px] font-semibold"
+            >GIT</span
+          >
+          <span
+            class="bg-pink-900 text-pink-600 px-4 py-1 rounded text-[10px] sm:text-[12px] md:text-[14px] font-semibold"
+            >Nodejs</span
+          >
+          <span
+            class="bg-pink-900 text-pink-600 px-4 py-1 rounded text-[10px] sm:text-[12px] md:text-[14px] font-semibold"
+            >VB.NET</span
+          >
+          <span
+            class="bg-pink-900 text-pink-600 px-4 py-1 rounded text-[10px] sm:text-[12px] md:text-[14px] font-semibold"
+            >C#</span
+          >
+        </div>
+      </div>
     </div>
-    <div>
-     <h3 class="text-left text-pink-600 font-semibold mb-4">
-      Backend &amp; Database
-     </h3>
-     <div class="flex flex-wrap gap-3 justify-center md:justify-start">
-      <span class="bg-pink-900 text-pink-600 px-4 py-1 rounded text-[10px] sm:text-[12px] md:text-[14px] font-semibold">
-       SQL SERVER
-      </span>
-      <span class="bg-pink-900 text-pink-600 px-4 py-1 rounded text-[10px] sm:text-[12px] md:text-[14px] font-semibold">
-       MYSQL
-      </span>
-      <span class="bg-pink-900 text-pink-600 px-4 py-1 rounded text-[10px] sm:text-[12px] md:text-[14px] font-semibold">
-       PHP
-      </span>
-      <span class="bg-pink-900 text-pink-600 px-4 py-1 rounded text-[10px] sm:text-[12px] md:text-[14px] font-semibold">
-       COMPOSER
-      </span>
-      <span class="bg-pink-900 text-pink-600 px-4 py-1 rounded text-[10px] sm:text-[12px] md:text-[14px] font-semibold">
-     GIT
-      </span>
-
-       <span class="bg-pink-900 text-pink-600 px-4 py-1 rounded text-[10px] sm:text-[12px] md:text-[14px] font-semibold">
-      Nodejs
-      </span>
-       <span class="bg-pink-900 text-pink-600 px-4 py-1 rounded text-[10px] sm:text-[12px] md:text-[14px] font-semibold">
-      VB.NET
-      </span>
-        <span class="bg-pink-900 text-pink-600 px-4 py-1 rounded text-[10px] sm:text-[12px] md:text-[14px] font-semibold">
-  C#
-      </span>
-     </div>
-    </div>
-   </div>
   </section>
 
-<!-- Projects Section with added id -->
-<section
-  id="projects"
-  class="bg-gradient-to-r from-[#0a0f1a] via-[#0a0f1a] to-[#0f1a2a] py-16 mt-24 fade-in"
->
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-20">
-    <h1 class="text-center text-3xl font-normal mb-16 text-[#d9d9f1]">
-      Projects
-    </h1>
-
-    <!-- Swiper -->
-    <div class="swiper mySwiper max-w-4xl mx-auto">
-      <div class="swiper-wrapper">
-
-        <!-- Project 1: Arabic Poetry -->
-        <section class="swiper-slide mb-16">
-          <img
-            alt="Arabic Poetry project displayed on desktop, tablet, and mobile devices with a beige background"
-            class="w-full rounded-md border border-[#a02a5a] mb-6"
-            src="atrbsystem.JPG"
-          />
-          <h2 class="text-xl font-normal mb-2 text-[#d9d9f1]">ATRB System</h2>
-          <p class="text-[14px] mb-2 text-[#d9d9f1]">
-            Made with
-            <span class="text-[#a02a5a] font-semibold">Php</span>,
-            <span class="text-[#a02a5a] font-semibold">Javascript</span>,
-            <span class="text-[#a02a5a] font-semibold">Bootstrap</span>,
-            <span class="text-[#a02a5a] font-semibold">SMS Api</span>,
-            <span class="text-[#a02a5a] font-semibold">Tailwindcss</span>
-          </p>
-          <p class="text-[14px] mb-4 text-[#d9d9f1] leading-relaxed">
-           Authority to Transact Business System" is a project I developed to streamline employees' requests for conducting transactions outside the office. The system features real-time notifications and generates invoices for each transaction, enhancing efficiency and accountability.
-          </p>
-        
-        </section>
-
-        <!-- Project 2: Shawerr -->
-        <section class="swiper-slide mb-16">
-          <img
-            alt="Shawerr project screenshot showing people discussing in a meeting with Arabic text overlay"
-            class="w-full rounded-md border border-[#a02a5a] mb-6"
-            src="pointofsale.JPG"
-          />
-          <h2 class="text-xl font-normal mb-2 text-[#d9d9f1]">Pure Point of Sale</h2>
-          <p class="text-[14px] mb-2 text-[#d9d9f1]">
-            Made with
-            <span class="text-[#a02a5a] font-semibold">ElectronJs</span>,
-            
-            <span class="text-[#a02a5a] font-semibold">MySQL</span>,
-            <span class="text-[#a02a5a] font-semibold">Tailwindcss</span>,
-            <span class="text-[#a02a5a] font-semibold">Nodejs</span>
-             <span class="text-[#a02a5a] font-semibold">Composer</span>
-          </p>
-          <p class="text-[14px] mb-4 text-[#d9d9f1] leading-relaxed">
-            I developed a Point of Sale (POS) system to help businesses process sales transactions quickly and accurately. It includes features for scanning items, calculating totals, accepting payments, and printing receipts.
-          </p>
-         
-        </section>
-
-        <!-- Project 3: Qarora -->
+  <!-- Projects Section -->
+  <section
+    id="projects"
+    class="bg-gradient-to-r from-[#0a0f1a] via-[#0a0f1a] to-[#0f1a2a] py-16 mt-24 fade-in"
+  >
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-20">
+      <h1 class="text-center text-3xl font-normal mb-16 text-[#d9d9f1]">
+        Projects
+      </h1>
       
 
-         <section class="swiper-slide mb-16">
-          <img
-            alt="Shawerr project screenshot showing people discussing in a meeting with Arabic text overlay"
-            class="w-full rounded-md border border-[#a02a5a] mb-6"
-            src="psa.jpg"
-          />
-          <h2 class="text-xl font-normal mb-2 text-[#d9d9f1]">PSA BARMM Citizens Charter</h2>
-          <p class="text-[14px] mb-2 text-[#d9d9f1]">
-            Made with
-            <span class="text-[#a02a5a] font-semibold">Tailwindcss</span>,
-            
-            <span class="text-[#a02a5a] font-semibold">Composer</span>,
-            <span class="text-[#a02a5a] font-semibold">Javascript</span>,
-            <span class="text-[#a02a5a] font-semibold">TCPDF</span>
-     
-          </p>
-          <p class="text-[14px] mb-4 text-[#d9d9f1] leading-relaxed">
-            I developed a Point of Sale (POS) system to help businesses process sales transactions quickly and accurately. It includes features for scanning items, calculating totals, accepting payments, and printing receipts.
-          </p>
-         
-        </section>
+      <!-- Swiper -->
+      <div class="swiper mySwiper max-w-4xl mx-auto">
+        <div class="swiper-wrapper">
+          <!-- Project 1 -->
+          <section class="swiper-slide mb-16">
+            <img
+              alt="Arabic Poetry project displayed on desktop, tablet, and mobile devices with a beige background"
+              class="w-full rounded-md border border-[#a02a5a] mb-6"
+              src="atrbsystem.JPG"
+            />
+            <h2 class="text-xl font-normal mb-2 text-[#d9d9f1]">ATRB System</h2>
+            <p class="text-[14px] mb-2 text-[#d9d9f1]">
+              Made with
+              <span class="text-[#a02a5a] font-semibold">Php</span>,
+              <span class="text-[#a02a5a] font-semibold">Javascript</span>,
+              <span class="text-[#a02a5a] font-semibold">Bootstrap</span>,
+              <span class="text-[#a02a5a] font-semibold">SMS Api</span>,
+              <span class="text-[#a02a5a] font-semibold">Tailwindcss</span>
+            </p>
+            <p class="text-[14px] mb-4 text-[#d9d9f1] leading-relaxed">
+              Authority to Transact Business System" is a project I developed to
+              streamline employees' requests for conducting transactions outside
+              the office. The system features real-time notifications and
+              generates invoices for each transaction, enhancing efficiency and
+              accountability.
+            </p>
+          </section>
+
+          <!-- Project 2 -->
+          <section class="swiper-slide mb-16">
+            <img
+              alt="Shawerr project screenshot showing people discussing in a meeting with Arabic text overlay"
+              class="w-full rounded-md border border-[#a02a5a] mb-6"
+              src="pointofsale.JPG"
+            />
+            <h2 class="text-xl font-normal mb-2 text-[#d9d9f1]">Pure Point of Sale</h2>
+            <p class="text-[14px] mb-2 text-[#d9d9f1]">
+              Made with
+              <span class="text-[#a02a5a] font-semibold">ElectronJs</span>,
+              <span class="text-[#a02a5a] font-semibold">MySQL</span>,
+              <span class="text-[#a02a5a] font-semibold">Tailwindcss</span>,
+              <span class="text-[#a02a5a] font-semibold">Nodejs</span>
+              <span class="text-[#a02a5a] font-semibold">Composer</span>
+            </p>
+            <p class="text-[14px] mb-4 text-[#d9d9f1] leading-relaxed">
+              I developed a Point of Sale (POS) system to help businesses process
+              sales transactions quickly and accurately. It includes features
+              for scanning items, calculating totals, accepting payments, and
+              printing receipts.
+            </p>
+          </section>
+
+          <!-- Project 3 -->
+          <section class="swiper-slide mb-16">
+            <img
+              alt="Shawerr project screenshot showing people discussing in a meeting with Arabic text overlay"
+              class="     w-full rounded-md border border-[#a02a5a] mb-6"
+              src="psa.jpg"
+            />
+            <h2 class="text-xl font-normal mb-2 text-[#d9d9f1]">PSA BARMM Citizens Charter</h2>
+            <p class="text-[14px] mb-2 text-[#d9d9f1]">
+              Made with
+              <span class="text-[#a02a5a] font-semibold">Tailwindcss</span>,
+              <span class="text-[#a02a5a] font-semibold">Composer</span>,
+              <span class="text-[#a02a5a] font-semibold">Javascript</span>,
+              <span class="text-[#a02a5a] font-semibold">TCPDF</span>
+            </p>
+            <p class="text-[14px] mb-4 text-[#d9d9f1] leading-relaxed">
+              This PSA BARMM Citizens' Charter serves as a comprehensive guide designed to ensure transparency, accountability, and efficiency in the delivery of government services. It outlines clear and accessible guidelines for both external clients and internal processes, aiming to promote a seamless and responsive interaction between the agency and the public it serves.
+            </p>
+          </section>
+        </div>
+
+        <!-- Swiper Pagination -->
+        <div class="swiper-pagination mt-6"></div>
+
+        <!-- Swiper Navigation -->
+        <div class="swiper-button-prev text-[#a02a5a]"></div>
+        <div class="swiper-button-next text-[#a02a5a]"></div>
       </div>
-
-  
-
-
-
-
-            <!-- Swiper Pagination -->
-      <div class="swiper-pagination mt-6"></div>
-
-      <!-- Swiper Navigation -->
-      <div class="swiper-button-prev text-[#a02a5a]"></div>
-      <div class="swiper-button-next text-[#a02a5a]"></div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Swiper JS -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <!-- Contact Section merged and styled -->
+<section
+  id="contact"
+  class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-24 text-gray-300 fade-in flex flex-col items-center"
+>
+  <h2 class="text-white text-3xl font-normal mb-14 text-center">
+    Contact Me.
+  </h2>
+ 
 
-<script>
-  // Smooth scroll for Projects link
-  document.querySelector('a[href="#projects"]').addEventListener('click', function(e) {
-    e.preventDefault();
-    document.querySelector('#projects').scrollIntoView({ behavior: 'smooth' });
-  });
+  <div class="flex flex-col lg:flex-row gap-12 justify-center items-center w-full max-w-4xl">
+  <!-- Middle content -->
+  <section class="flex-1 max-w-3xl text-xs leading-tight text-center">
+    <p class="mb-6">
+      Feel free to reach out to me for any inquiries, collaborations, or just to say hello!
+    </p>
+    <div class="mt-6 space-x-4 text-blue-500 text-lg flex justify-center">
+      <a aria-label="Share on Facebook" href="https://web.facebook.com/cristofer.amores.01" class="hover:text-pink-600 transition">
+        <i class="fab fa-facebook-square"></i>
+      </a>
+   
+    </div>
 
-  // Initialize Swiper
-  const swiper = new Swiper(".mySwiper", {
-    slidesPerView: 1,
-    spaceBetween: 30,
-    loop: true,
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    effect: "slide",
-    speed: 600,
-  });
+    <p class="font-semibold my-6 text-lg">Contact Me Now</p>
+    <div class="border border-gray-600 rounded-sm mb-4">
+      <div class="border-l-4 border-pink-600 bg-[#1e293b] px-3 py-2 font-semibold">
+        Email
+      </div>
+      <div class="px-3 py-2">cristoferamorestofee@gmail.com</div>
+    </div>
+    <div class="border border-gray-600 rounded-sm mb-4">
+      <div class="border-l-4 border-pink-600 bg-[#1e293b] px-3 py-2 font-semibold">Phone</div>
+      <div class="px-3 py-2">09531296730</div>
+    </div>
+    <div class="border border-gray-600 rounded-sm mb-6">
+      <div class="border-l-4 border-pink-600 bg-[#1e293b] px-3 py-2 font-semibold">Address</div>
+      <div class="px-3 py-2 leading-tight">
+        Bacolod, Lanao Del Norte
+      </div>
+    </div>
+    <p class="font-semibold mb-4 text-lg">Follow me on Social Media</p>
+    <div class="flex justify-center items-center gap-4 border-l-4 border-pink-600 pl-4">
+      <a
+        aria-label="Facebook"
+        href="https://web.facebook.com/cristofer.amores.01"
+        class="bg-[#1e293b] text-gray-300 p-3 rounded-sm hover:bg-pink-600 hover:text-white transition text-2xl"
+        ><i class="fab fa-facebook-f"></i
+      ></a>
+    
+    </div>
+  </section>
+</div>
 
-  // Fade-in on scroll using Intersection Observer
-  document.addEventListener("DOMContentLoaded", function () {
-    const faders = document.querySelectorAll(".fade-in");
 
-    const options = {
-      threshold: 0.3,
-    };
 
-    const appearOnScroll = new IntersectionObserver(function (entries, appearOnScroll) {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) {
-          return;
-        } else {
-          entry.target.classList.add("visible");
-          appearOnScroll.unobserve(entry.target);
-        }
-      });
-    }, options);
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
-    faders.forEach(fader => {
-      appearOnScroll.observe(fader);
+  <script>
+    // Smooth scroll for Projects link
+    document.querySelector('a[href="#projects"]').addEventListener("click", function (e) {
+      e.preventDefault();
+      document.querySelector("#projects").scrollIntoView({ behavior: "smooth" });
     });
-  });
-</script>
 
+    // Initialize Swiper
+    const swiper = new Swiper(".mySwiper", {
+      slidesPerView: 1,
+      spaceBetween: 30,
+      loop: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      effect: "slide",
+      speed: 600,
+    });
+
+    // Fade-in on scroll using Intersection Observer
+    document.addEventListener("DOMContentLoaded", function () {
+      const faders = document.querySelectorAll(".fade-in");
+
+      const options = {
+        threshold: 0.3,
+      };
+
+      const appearOnScroll = new IntersectionObserver(function (entries, appearOnScroll) {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) {
+            return;
+          } else {
+            entry.target.classList.add("visible");
+            appearOnScroll.unobserve(entry.target);
+          }
+        });
+      }, options);
+
+      faders.forEach((fader) => {
+        appearOnScroll.observe(fader);
+      });
+    });
+
+    // Mobile menu toggle
+    const menuButton = document.getElementById("mobile-menu-button");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    menuButton.addEventListener("click", () => {
+      if (mobileMenu.classList.contains("hidden")) {
+        mobileMenu.classList.remove("hidden");
+      } else {
+        mobileMenu.classList.add("hidden");
+      }
+    });
+  </script>
 </body>
 </html>
