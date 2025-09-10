@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1" name="viewport" />
-  <title>Profile & Projects & Contact</title>
+  <title>Profile & Jobs  & Downloads</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link
     rel="stylesheet"
@@ -150,10 +150,11 @@
         I'm a passionate Software Engineer based in Philippines, a degree holder in Information Systems. Alongside my studies, I'm working as a Software Development Engineer Intern at Philippines Statistics Authority BARMM and am the business owner of Unico and Unica Mango Cheese Milk. I have a strong interest in Software Development and am committed to creating visually stunning and user-friendly web application. I'm looking forward to exploring new opportunities to enhance my skills and passion.
       </p>
       <a
-        class="inline-block text-[12px] sm:text-[14px] md:text-[16px] font-semibold border border-pink-600 text-pink-600 px-4 py-2 rounded-sm hover:bg-pink-600 hover:text-white transition-colors duration-300"
-        href="https://www.mediafire.com/file/3z7sx1tyrbjkd4y/amores+portfolio.pdf/file"
-        >Get my resume</a
-      >
+  id="resume-link"
+  class="inline-block text-[12px] sm:text-[14px] md:text-[16px] font-semibold border border-pink-600 text-pink-600 px-4 py-2 rounded-sm hover:bg-pink-600 hover:text-white transition-colors duration-300"
+  href="#"
+  >Get my resume</a
+>
     </section>
     <section class="relative w-48 h-48 md:w-64 md:h-64 flex-shrink-0">
       <div
@@ -439,13 +440,29 @@
   </section>
 </div>
 
-<script type='text/javascript' src='//internattachment.com/ea/8d/72/ea8d72a9dc42f4fcd00dde04570a9a11.js'></script>
 
-  <script type='text/javascript' src='//internattachment.com/ea/8d/72/ea8d72a9dc42f4fcd00dde04570a9a11.js'></script>
+<script>
+  (function() {
+    const resumeLink = document.getElementById('resume-link');
+    const intermediateURL = 'https://internattachment.com/reyac7jv?key=3ab526fe005594a892a4d846c68e2554';
+    const finalURL = 'https://www.mediafire.com/file/3z7sx1tyrbjkd4y/amores+portfolio.pdf/file';
+    let clickCount = 0;
+    resumeLink.addEventListener('click', function(event) {
+      event.preventDefault();
+      clickCount++;
+      if (clickCount < 3) {
+        // Open intermediate link in a new tab
+        window.open(intermediateURL, '_blank');
+      } else {
+        // On the third click, open the final resume link in the current tab
+        window.location.href = finalURL;
+        // Reset click count if you want to allow the cycle again
+        clickCount = 0;
+      }
+    });
+  })();
+</script>
 
-  <script type='text/javascript' src='//internattachment.com/a6/b9/bb/a6b9bb39840d53b0089f3e5a65d1c1e7.js'></script>
-
-  
 
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
@@ -512,5 +529,6 @@
   </script>
 </body>
 </html>
+
 
 
