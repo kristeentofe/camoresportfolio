@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="google-adsense-account" content="ca-pub-8477049066331170">
+
+    
+    <title>Draughts Game - Click to Play</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+
+        /* Full-screen draughts board background with wooden tones */
+        .board-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #F5DEB3; /* Light wheat wood base */
+            background-image: 
+                repeating-linear-gradient(90deg, #8B4513 0px, #8B4513 80px, #DEB887 80px, #DEB887 160px),
+                repeating-linear-gradient(0deg, #8B4513 0px, #8B4513 80px, #DEB887 80px, #DEB887 160px);
+            background-size: 160px 160px; /* Larger squares for a more board-like feel */
+            z-index: -1;
+        }
+
+        /* Hanging sign effect for the text - now in wooden brown */
+        .play-button {
+            position: relative;
+            background-color: #8B4513; /* Wooden brown color */
+            color: #FFF; /* White text for contrast on brown */
+            font-size: 4rem; /* Large text */
+            font-weight: bold;
+            padding: 20px 40px;
+            border: 5px solid #654321; /* Darker brown border for wood texture */
+            border-radius: 15px;
+            text-align: center;
+            cursor: pointer;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            z-index: 1;
+        }
+
+        .play-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+            background-color: #A0522D; /* Lighter brown on hover for wooden shine effect */
+        }
+
+        /* Rope effect for hanging sign */
+        .rope {
+            position: absolute;
+            top: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 50px;
+            background-color: #654321; /* Dark brown rope */
+            border-radius: 2px;
+        }
+
+        .play-button::before {
+            content: '';
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+            border-bottom: 25px solid #8B4513; /* Matching wooden brown triangle */
+        }
+
+        /* Simple alert on click for interactivity */
+        @media (max-width: 768px) {
+            .play-button {
+                font-size: 2rem;
+                padding: 15px 30px;
+            }
+        }
+    </style>
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8477049066331170"
+     crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <div class="board-bg"></div>
+    
+    <a href="https://lidraughts.org/Yl9VAo2G" class="play-button" onclick="startGame()">
+        <div class="rope"></div>
+        Click here to play with me!
+    </a>
+
+    <script>
+        function startGame() {
+            // Simple interactivity: Alert to simulate starting the game
+            // You can expand this to load a full draughts game if needed
+            alert("Humanda ka na !.");
+            
+            // Optional: Redirect to a full game or add more JS here
+            // For now, it's a placeholder
+        }
+    </script>
+</body>
+</html>
