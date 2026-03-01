@@ -1,572 +1,239 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta content="width=device-width, initial-scale=1" name="viewport" />
-  <title>Profile & Jobs  & Downloads</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-  />
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
-  />
-  <style>
-    body {
-      font-family: "Inter", sans-serif;
-    }
-    html {
-      scroll-behavior: smooth;
-    }
-    /* Fade-in animation */
-    .fade-in {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-    }
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    /* Profile picture floating animation */
-    @keyframes float {
-      0%,
-      100% {
-        transform: translateY(0) rotate(-12deg);
-      }
-      50% {
-        transform: translateY(-10px) rotate(-12deg);
-      }
-    }
-    .profile-picture-animate {
-      animation: float 4s ease-in-out infinite;
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Cristofer Amores | Portfolio</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+
+<style>
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; }
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 0.8s ease;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes float {
+  0%,100% { transform: translateY(0) rotate(-8deg); }
+  50% { transform: translateY(-12px) rotate(-8deg); }
+}
+.profile-picture-animate {
+  animation: float 4s ease-in-out infinite;
+}
+</style>
 </head>
-<body class="bg-[#0f172a] text-white relative overflow-x-hidden">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
-    <!-- Header -->
-    <header class="flex justify-between items-center text-xs text-gray-300 font-light tracking-wide relative">
-      <div class="flex items-center space-x-1">
-        <span>CRISTOFER AMORES</span>
-      </div>
 
-      <!-- Desktop nav -->
-      <nav class="hidden sm:flex space-x-6">
-        <a
-          class="hover:text-pink-600 transition-colors duration-300 font-bold drop-shadow-md text-lg border border-gray-300 px-2 py-1 rounded"
-          href="#about"
-          >About</a
-        >
-        <a
-          class="hover:text-pink-600 transition-colors duration-300 font-bold drop-shadow-md text-lg border border-gray-300 px-2 py-1 rounded"
-          href="#skills"
-          >Skills</a
-        >
-        <a
-          class="hover:text-pink-600 transition-colors duration-300 font-bold drop-shadow-md text-lg border border-gray-300 px-2 py-1 rounded"
-          href="#projects"
-          id="projects-link"
-          >Projects</a
-        >
-        <a
-          class="hover:text-pink-600 transition-colors duration-300 font-bold drop-shadow-md text-lg border border-gray-300 px-2 py-1 rounded"
-          href="#contact"
-          >Contact</a
-        >
-        <a
-          class="hover:text-pink-600 transition-colors duration-300 font-bold drop-shadow-md text-lg border border-gray-300 px-2 py-1 rounded"
-          href="#resume"
-          >Resume</a
-        >
-        <a
-          class="hover:text-pink-600 transition-colors duration-300 font-bold drop-shadow-md text-lg border border-gray-300 px-2 py-1 rounded"
-          href="#niche"
-          >Niche</a
-        >
-      </nav>
+<body class="bg-slate-900 text-white overflow-x-hidden">
 
-      <!-- Mobile menu button -->
-      <button
-        id="mobile-menu-button"
-        class="sm:hidden text-gray-300 focus:outline-none"
-        aria-label="Toggle menu"
-      >
-        <i class="fas fa-bars text-2xl"></i>
-      </button>
-    </header>
+<div class="max-w-7xl mx-auto px-6">
 
-    <!-- Mobile nav menu -->
-    <nav
-      id="mobile-menu"
-      class="sm:hidden mt-2 space-y-2 text-center text-gray-300 font-bold text-lg border border-gray-300 rounded px-4 py-2 hidden"
-    >
-      <a
-        class="block hover:text-pink-600 transition-colors duration-300 border border-gray-300 px-2 py-1 rounded"
-        href="#about"
-        >About</a
-      >
-      <a
-        class="block hover:text-pink-600 transition-colors duration-300 border border-gray-300 px-2 py-1 rounded"
-        href="#skills"
-        >Skills</a
-      >
-      <a
-        class="block hover:text-pink-600 transition-colors duration-300 border border-gray-300 px-2 py-1 rounded"
-        href="#projects"
-        >Projects</a
-      >
-      <a
-        class="block hover:text-pink-600 transition-colors duration-300 border border-gray-300 px-2 py-1 rounded"
-        href="#contact"
-        >Contact</a
-      >
-      <a
-        class="block hover:text-pink-600 transition-colors duration-300 border border-gray-300 px-2 py-1 rounded"
-        href="#resume"
-        >Resume</a
-      >
-      <a
-        class="block hover:text-pink-600 transition-colors duration-300 border border-gray-300 px-2 py-1 rounded"
-        href="#niche"
-        >Niche</a
-      >
-    </nav>
-  </div>
+<!-- HEADER -->
+<header class="flex justify-between items-center py-6">
+<h1 class="font-bold text-lg tracking-wide">CRISTOFER AMORES</h1>
 
-  <!-- Main content: Profile intro and image side by side -->
-  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6 flex flex-col md:flex-row md:justify-between md:items-start gap-10 fade-in">
-    <section class="max-w-lg text-[12px] sm:text-[14px] md:text-[16px] leading-tight text-gray-300 font-light">
-      <p class="mb-2">Hello! I am</p>
-      <h1 class="text-[18px] sm:text-[20px] md:text-[24px] font-semibold mb-2 text-white">
-        Cristofer Amores
-      </h1>
-      <p class="mb-3 text-pink-600 text-[14px] sm:text-[16px] md:text-[18px] font-semibold">
-        Software Engineer / Aspiring Virtual Assistant
-      </p>
-      <p class="mb-5">
-        I'm a passionate Software Engineer based in Philippines, a degree holder in Information Systems. Alongside my studies, I'm working as a Software Development Engineer Intern at Philippines Statistics Authority BARMM and am the business owner of Unico and Unica Mango Cheese Milk. I have a strong interest in Software Development and am committed to creating visually stunning and user-friendly web application. I'm looking forward to exploring new opportunities to enhance my skills and passion.
-      </p>
-      <a
-  id="resume-link"
-  class="inline-block text-[12px] sm:text-[14px] md:text-[16px] font-semibold border border-pink-600 text-pink-600 px-4 py-2 rounded-sm hover:bg-pink-600 hover:text-white transition-colors duration-300"
-  href="#"
-  >Get my resume</a
->
-    </section>
-    <section class="relative w-48 h-48 md:w-64 md:h-64 flex-shrink-0">
-      <div
-        class="absolute -rotate-12 border-4 border-pink-600 w-48 h-48 md:w-64 md:h-64 top-0 left-0 shadow-[0_0_60px_#e11d48] rounded-md"
-      ></div>
-      <img
-        alt="Profile image of a man in blue shirt with arms crossed rotated slightly"
-        class="absolute top-4 left-4 w-40 h-40 md:w-56 md:h-56 object-cover rounded-md profile-picture-animate"
-        src="profilepic.JPG"
-      />
-    </section>
-  </main>
+<nav class="hidden md:flex gap-6 text-sm font-semibold">
+<a href="#about" class="hover:text-pink-500 transition">About</a>
+<a href="#skills" class="hover:text-pink-500 transition">Skills</a>
+<a href="#projects" class="hover:text-pink-500 transition">Projects</a>
+<a href="#contact" class="hover:text-pink-500 transition">Contact</a>
+</nav>
 
-  <div class="flex justify-center mt-12 fade-in">
-    <i class="fas fa-chevron-down text-pink-600 text-lg"></i>
-  </div>
+<button id="menuBtn" class="md:hidden text-2xl">
+<i class="fas fa-bars"></i>
+</button>
+</header>
 
-  <section
-    id="about"
-    class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-24 text-center fade-in"
-  >
-    <h2 class="text-white text-2xl font-normal mb-14">About My</h2>
-    <div
-      class="flex flex-col md:flex-row justify-center gap-28 text-[12px] sm:text-[14px] md:text-[16px] font-light text-gray-300 max-w-5xl mx-auto"
-    >
-      <div class="max-w-[250px]">
-        <h3 class="text-pink-600 text-[14px] font-semibold mb-4">Past</h3>
-        <p>
-          I am an individual with a strong passion for technology, and I have
-          discovered that programming is the field that truly resonates with me.
-          Consequently, I dedicate countless hours to nurturing and developing
-          my passion.
-        </p>
-      </div>
-      <div class="max-w-[250px]">
-        <h3 class="text-pink-600 text-[14px] font-semibold mb-4">Present</h3>
-        <p>
-          I am a graduate of Bachelor of Science in Information Systems and
-          continue to pursue a career in this field to gain valuable experience
-          and further enhance my expertise, particularly in this area.
-        </p>
-      </div>
-      <div class="max-w-[250px]">
-        <h3 class="text-pink-600 text-[14px] font-semibold mb-4">Future</h3>
-        <p>
-          I'm excited about the future of programming and the opportunities it
-          offers. With my passion and skills, I’m confident I can make
-          meaningful contributions to the industry.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section
-    id="skills"
-    class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-24 text-center fade-in"
-  >
-    <h2 class="text-white text-2xl font-normal mb-14">Skills</h2>
-    <div
-      class="max-w-5xl mx-auto text-[12px] sm:text-[14px] md:text-[16px] font-light text-gray-300 space-y-8"
-    >
-      <div>
-        <h3 class="text-left text-pink-600 font-semibold mb-4">Front End</h3>
-        <div class="flex flex-wrap gap-3 justify-center md:justify-start">
-          <span
-            class="bg-pink-900 text-pink-600 px-4 py-1 rounded text-[10px] sm:text-[12px] md:text-[14px] font-semibold"
-            >HTML</span
-          >
-          <span
-            class="bg-pink-900 text-pink-600 px-4 py-1 rounded text-[10px] sm:text-[12px] md:text-[14px] font-semibold"
-            >JavaScript</span
-          >
-          <span
-            class="bg-pink-900 text-pink-600 px-4 py-1 rounded text-[10px] sm:text-[12px] md:text-[14px] font-semibold"
-            >Bootstrap</span
-          >
-          <span
-            class="bg-pink-900 text-pink-600 px-4 py-1 rounded text-[10px] sm:text-[12px] md:text-[14px] font-semibold"
-            >React</span
-          >
-          <span
-            class="bg-pink-900 text-pink-600 px-4 py-1 rounded text-[10px] sm:text-[12px] md:text-[14px] font-semibold"
-            >Tailwind</span
-          >
-          <span
-            class="bg-pink-900 text-pink-600 px-4 py-1 rounded text-[10px] sm:text-[12px] md:text-[14px] font-semibold"
-            >JQuery</span
-          >
-          <span
-            class="bg-pink-900 text-pink-600 px-4 py-1 rounded text-[10px] sm:text-[12px] md:text-[14px] font-semibold"
-            >Electron</span
-          >
-          <span
-            class="bg-pink-900 text-pink-600 px-4 py-1 rounded text-[10px] sm:text-[12px] md:text-[14px] font-semibold"
-            >Nativefier</span
-          >
-        </div>
-      </div>
-      <div>
-        <h3 class="text-left text-pink-600 font-semibold mb-4">Backend &amp; Database</h3>
-        <div class="flex flex-wrap gap-3 justify-center md:justify-start">
-          <span
-            class="bg-pink-900 text-pink-600 px-4 py-1 rounded text-[10px] sm:text-[12px] md:text-[14px] font-semibold"
-            >SQL SERVER</span
-          >
-          <span
-            class="bg-pink-900 text-pink-600 px-4 py-1 rounded text-[10px] sm:text-[12px] md:text-[14px] font-semibold"
-            >MYSQL</span
-          >
-          <span
-            class="bg-pink-900 text-pink-600 px-4 py-1 rounded text-[10px] sm:text-[12px] md:text-[14px] font-semibold"
-            >PHP</span
-          >
-          <span
-            class="bg-pink-900 text-pink-600 px-4 py-1 rounded text-[10px] sm:text-[12px] md:text-[14px] font-semibold"
-            >COMPOSER</span
-          >
-          <span
-            class="bg-pink-900 text-pink-600 px-4 py-1 rounded text-[10px] sm:text-[12px] md:text-[14px] font-semibold"
-            >GIT</span
-          >
-          <span
-            class="bg-pink-900 text-pink-600 px-4 py-1 rounded text-[10px] sm:text-[12px] md:text-[14px] font-semibold"
-            >Nodejs</span
-          >
-          <span
-            class="bg-pink-900 text-pink-600 px-4 py-1 rounded text-[10px] sm:text-[12px] md:text-[14px] font-semibold"
-            >VB.NET</span
-          >
-          <span
-            class="bg-pink-900 text-pink-600 px-4 py-1 rounded text-[10px] sm:text-[12px] md:text-[14px] font-semibold"
-            >C#</span
-          >
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Projects Section -->
-  <section
-    id="projects"
-    class="bg-gradient-to-r from-[#0a0f1a] via-[#0a0f1a] to-[#0f1a2a] py-16 mt-24 fade-in"
-  >
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-20">
-      <h1 class="text-center text-3xl font-normal mb-16 text-[#d9d9f1]">
-        Projects
-      </h1>
-      
-
-      <!-- Swiper -->
-      <div class="swiper mySwiper max-w-4xl mx-auto">
-        <div class="swiper-wrapper">
-       
-           <!-- Project 1 -->
-          <section class="swiper-slide mb-16">
-            <img
-              alt="Arabic Poetry project displayed on desktop, tablet, and mobile devices with a beige background"
-              class="w-full rounded-md border border-[#a02a5a] mb-6"
-              src="portfolioadd.JPG"
-            />
-           <a href="https://gobu.click" class="block">
-  <h2 class="text-xl font-normal mb-2 text-[#d9d9f1] hover:text-white transition">
-    Gobu.click
-  </h2>
-</a>
-
-            <p class="text-[14px] mb-2 text-[#d9d9f1]">
-              Made with
-              <span class="text-[#a02a5a] font-semibold">Php</span>,
-              <span class="text-[#a02a5a] font-semibold">Javascript</span>,
-              <span class="text-[#a02a5a] font-semibold">Bootstrap</span>,
-              <span class="text-[#a02a5a] font-semibold">Xendit</span>,
-              <span class="text-[#a02a5a] font-semibold">AJAX</span>
-                <span class="text-[#a02a5a] font-semibold">Composer</span>
-               <span class="text-[#a02a5a] font-semibold">MySQL</span>
-            </p>
-            <p class="text-[14px] mb-4 text-[#d9d9f1] leading-relaxed">
-GOBU.CLICK is a modern e-commerce platform designed to simplify the way customers purchase digital products and physical goods online. The platform focuses on speed, convenience, and secure transactions, allowing users to browse, order, and receive products in one seamless experience.
-
-It was built to serve both individual buyers and small online sellers, making it a scalable marketplace for growing digital commerce.
-            </p>
-          </section>
-          
-          
-          
-          
-          <!-- Project 1 -->
-          <section class="swiper-slide mb-16">
-            <img
-              alt="Arabic Poetry project displayed on desktop, tablet, and mobile devices with a beige background"
-              class="w-full rounded-md border border-[#a02a5a] mb-6"
-              src="atrbsystem.JPG"
-            />
-            <h2 class="text-xl font-normal mb-2 text-[#d9d9f1]">ATRB System</h2>
-            <p class="text-[14px] mb-2 text-[#d9d9f1]">
-              Made with
-              <span class="text-[#a02a5a] font-semibold">Php</span>,
-              <span class="text-[#a02a5a] font-semibold">Javascript</span>,
-              <span class="text-[#a02a5a] font-semibold">Bootstrap</span>,
-              <span class="text-[#a02a5a] font-semibold">SMS Api</span>,
-              <span class="text-[#a02a5a] font-semibold">Tailwindcss</span>
-            </p>
-            <p class="text-[14px] mb-4 text-[#d9d9f1] leading-relaxed">
-              Authority to Transact Business System" is a project I developed to
-              streamline employees' requests for conducting transactions outside
-              the office. The system features real-time notifications and
-              generates invoices for each transaction, enhancing efficiency and
-              accountability.
-            </p>
-          </section>
-
-          <!-- Project 2 -->
-          <section class="swiper-slide mb-16">
-            <img
-              alt="Shawerr project screenshot showing people discussing in a meeting with Arabic text overlay"
-              class="w-full rounded-md border border-[#a02a5a] mb-6"
-              src="pointofsale.JPG"
-            />
-            <h2 class="text-xl font-normal mb-2 text-[#d9d9f1]">Pure Point of Sale</h2>
-            <p class="text-[14px] mb-2 text-[#d9d9f1]">
-              Made with
-              <span class="text-[#a02a5a] font-semibold">ElectronJs</span>,
-              <span class="text-[#a02a5a] font-semibold">MySQL</span>,
-              <span class="text-[#a02a5a] font-semibold">Tailwindcss</span>,
-              <span class="text-[#a02a5a] font-semibold">Nodejs</span>
-              <span class="text-[#a02a5a] font-semibold">Composer</span>
-            </p>
-            <p class="text-[14px] mb-4 text-[#d9d9f1] leading-relaxed">
-              I developed a Point of Sale (POS) system to help businesses process
-              sales transactions quickly and accurately. It includes features
-              for scanning items, calculating totals, accepting payments, and
-              printing receipts.
-            </p>
-          </section>
-
-          <!-- Project 3 -->
-          <section class="swiper-slide mb-16">
-            <img
-              alt="Shawerr project screenshot showing people discussing in a meeting with Arabic text overlay"
-              class="     w-full rounded-md border border-[#a02a5a] mb-6"
-              src="psa.jpg"
-            />
-            <h2 class="text-xl font-normal mb-2 text-[#d9d9f1]">PSA BARMM Citizens Charter</h2>
-            <p class="text-[14px] mb-2 text-[#d9d9f1]">
-              Made with
-              <span class="text-[#a02a5a] font-semibold">Tailwindcss</span>,
-              <span class="text-[#a02a5a] font-semibold">Composer</span>,
-              <span class="text-[#a02a5a] font-semibold">Javascript</span>,
-              <span class="text-[#a02a5a] font-semibold">TCPDF</span>
-            </p>
-            <p class="text-[14px] mb-4 text-[#d9d9f1] leading-relaxed">
-              This PSA BARMM Citizens' Charter serves as a comprehensive guide designed to ensure transparency, accountability, and efficiency in the delivery of government services. It outlines clear and accessible guidelines for both external clients and internal processes, aiming to promote a seamless and responsive interaction between the agency and the public it serves.
-            </p>
-          </section>
-        </div>
-
-        <!-- Swiper Pagination -->
-        <div class="swiper-pagination mt-6"></div>
-
-        <!-- Swiper Navigation -->
-        <div class="swiper-button-prev text-[#a02a5a]"></div>
-        <div class="swiper-button-next text-[#a02a5a]"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section merged and styled -->
-<section
-  id="contact"
-  class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-24 text-gray-300 fade-in flex flex-col items-center"
->
-  <h2 class="text-white text-3xl font-normal mb-14 text-center">
-    Contact Me.
-  </h2>
- 
-
-  <div class="flex flex-col lg:flex-row gap-12 justify-center items-center w-full max-w-4xl">
-  <!-- Middle content -->
-  <section class="flex-1 max-w-3xl text-xs leading-tight text-center">
-    <p class="mb-6">
-      Feel free to reach out to me for any inquiries, collaborations, or just to say hello!
-    </p>
-    <div class="mt-6 space-x-4 text-blue-500 text-lg flex justify-center">
-      <a aria-label="Share on Facebook" href="https://web.facebook.com/cristofer.amores.01" class="hover:text-pink-600 transition">
-        <i class="fab fa-facebook-square"></i>
-      </a>
-   
-    </div>
-
-    <p class="font-semibold my-6 text-lg">Contact Me Now</p>
-    <div class="border border-gray-600 rounded-sm mb-4">
-      <div class="border-l-4 border-pink-600 bg-[#1e293b] px-3 py-2 font-semibold">
-        Email
-      </div>
-      <div class="px-3 py-2">cristoferamorestofee@gmail.com</div>
-    </div>
-    <div class="border border-gray-600 rounded-sm mb-4">
-      <div class="border-l-4 border-pink-600 bg-[#1e293b] px-3 py-2 font-semibold">Phone</div>
-      <div class="px-3 py-2">09531296730</div>
-    </div>
-    <div class="border border-gray-600 rounded-sm mb-6">
-      <div class="border-l-4 border-pink-600 bg-[#1e293b] px-3 py-2 font-semibold">Address</div>
-      <div class="px-3 py-2 leading-tight">
-        Bacolod, Lanao Del Norte
-      </div>
-    </div>
-    <p class="font-semibold mb-4 text-lg">Follow me on Social Media</p>
-    <div class="flex justify-center items-center gap-4 border-l-4 border-pink-600 pl-4">
-      <a
-        aria-label="Facebook"
-        href="https://web.facebook.com/cristofer.amores.01"
-        class="bg-[#1e293b] text-gray-300 p-3 rounded-sm hover:bg-pink-600 hover:text-white transition text-2xl"
-        ><i class="fab fa-facebook-f"></i
-      ></a>
-    
-    </div>
-  </section>
+<!-- MOBILE MENU -->
+<div id="mobileMenu" class="hidden flex-col gap-4 text-center pb-6 md:hidden">
+<a href="#about" class="block hover:text-pink-500">About</a>
+<a href="#skills" class="block hover:text-pink-500">Skills</a>
+<a href="#projects" class="block hover:text-pink-500">Projects</a>
+<a href="#contact" class="block hover:text-pink-500">Contact</a>
 </div>
 
+<!-- HERO SECTION -->
+<section class="flex flex-col md:flex-row items-center justify-center gap-12 text-center md:text-left py-16 fade-in">
+
+<div class="max-w-xl">
+<p class="text-gray-400">Hello! I am</p>
+<h2 class="text-3xl md:text-4xl font-bold mt-2">Cristofer Amores</h2>
+<p class="text-pink-500 font-semibold mt-3 text-lg">
+Software Engineer / Aspiring Virtual Assistant
+</p>
+
+<p class="mt-5 text-gray-300 leading-relaxed">
+Passionate Software Engineer based in the Philippines with strong interest in building scalable web applications and modern digital solutions.
+</p>
+
+<a id="resume-link"
+class="inline-block mt-6 border border-pink-500 text-pink-500 px-6 py-2 rounded hover:bg-pink-500 hover:text-white transition">
+Download Resume
+</a>
+</div>
+
+<div class="relative w-60 h-60">
+<div class="absolute -rotate-6 border-4 border-pink-500 w-full h-full rounded shadow-lg"></div>
+<img src="profilepic.JPG"
+class="absolute top-4 left-4 w-[85%] h-[85%] object-cover rounded profile-picture-animate">
+</div>
+
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="py-20 text-center fade-in">
+<h2 class="text-3xl mb-12">About Me</h2>
+
+<div class="flex flex-col md:flex-row gap-10 justify-center max-w-4xl mx-auto">
+<div class="max-w-sm">
+<h3 class="text-pink-500 font-semibold mb-3">Past</h3>
+<p class="text-gray-300 text-sm">
+Discovered passion in programming and dedicated years building systems and improving technical skills.
+</p>
+</div>
+
+<div class="max-w-sm">
+<h3 class="text-pink-500 font-semibold mb-3">Present</h3>
+<p class="text-gray-300 text-sm">
+Graduate of Information Systems continuously building professional experience in software engineering.
+</p>
+</div>
+
+<div class="max-w-sm">
+<h3 class="text-pink-500 font-semibold mb-3">Future</h3>
+<p class="text-gray-300 text-sm">
+Focused on mastering full-stack development and contributing to impactful digital platforms.
+</p>
+</div>
+</div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="py-20 text-center fade-in">
+<h2 class="text-3xl mb-12">Skills</h2>
+
+<div class="max-w-4xl mx-auto space-y-10">
+
+<div>
+<h3 class="text-pink-500 font-semibold mb-4">Frontend</h3>
+<div class="flex flex-wrap justify-center gap-3 text-sm">
+<span class="bg-pink-900 px-4 py-1 rounded">HTML</span>
+<span class="bg-pink-900 px-4 py-1 rounded">JavaScript</span>
+<span class="bg-pink-900 px-4 py-1 rounded">React</span>
+<span class="bg-pink-900 px-4 py-1 rounded">Tailwind</span>
+</div>
+</div>
+
+<div>
+<h3 class="text-pink-500 font-semibold mb-4">Backend</h3>
+<div class="flex flex-wrap justify-center gap-3 text-sm">
+<span class="bg-pink-900 px-4 py-1 rounded">PHP</span>
+<span class="bg-pink-900 px-4 py-1 rounded">NodeJS</span>
+<span class="bg-pink-900 px-4 py-1 rounded">MySQL</span>
+<span class="bg-pink-900 px-4 py-1 rounded">C#</span>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="py-20 fade-in">
+<h2 class="text-3xl text-center mb-12">Projects</h2>
+
+<div class="swiper mySwiper max-w-4xl mx-auto">
+<div class="swiper-wrapper">
+
+<div class="swiper-slide text-center">
+<img src="portfolioadd.JPG" class="rounded mb-4 mx-auto">
+<h3 class="text-xl mb-2">Gobu.click</h3>
+<p class="text-gray-300 text-sm">
+Modern e-commerce platform built using PHP, JS and MySQL.
+</p>
+</div>
+
+<div class="swiper-slide text-center">
+<img src="atrbsystem.JPG" class="rounded mb-4 mx-auto">
+<h3 class="text-xl mb-2">ATRB System</h3>
+<p class="text-gray-300 text-sm">
+Authority to Transact Business system with real-time notification.
+</p>
+</div>
+
+</div>
+
+<div class="swiper-pagination mt-6"></div>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="py-20 text-center fade-in">
+<h2 class="text-3xl mb-10">Contact Me</h2>
+
+<div class="max-w-xl mx-auto text-gray-300 space-y-4">
+<p>Email: cristoferamorestofee@gmail.com</p>
+<p>Phone: 09531296730</p>
+<p>Bacolod, Lanao Del Norte</p>
+
+<div class="flex justify-center gap-6 text-2xl mt-6">
+<a href="https://web.facebook.com/cristofer.amores.01" class="hover:text-pink-500">
+<i class="fab fa-facebook"></i>
+</a>
+</div>
+</div>
+</section>
+
+</div>
+
+<!-- SCRIPTS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
 <script>
-  (function() {
-    const resumeLink = document.getElementById('resume-link');
-    const intermediateURL = 'https://internattachment.com/reyac7jv?key=3ab526fe005594a892a4d846c68e2554';
-    const finalURL = 'https://www.mediafire.com/file/3z7sx1tyrbjkd4y/amores+portfolio.pdf/file';
-    let clickCount = 0;
-    resumeLink.addEventListener('click', function(event) {
-      event.preventDefault();
-      clickCount++;
-      if (clickCount < 3) {
-        // Open intermediate link in a new tab
-        window.open(intermediateURL, '_blank');
-      } else {
-        // On the third click, open the final resume link in the current tab
-        window.location.href = finalURL;
-        // Reset click count if you want to allow the cycle again
-        clickCount = 0;
-      }
-    });
-  })();
+// Mobile Menu Toggle
+const menuBtn = document.getElementById("menuBtn");
+const mobileMenu = document.getElementById("mobileMenu");
+
+menuBtn.addEventListener("click", () => {
+mobileMenu.classList.toggle("hidden");
+});
+
+// Swiper
+new Swiper(".mySwiper", {
+slidesPerView: 1,
+spaceBetween: 20,
+loop: true,
+pagination: {
+el: ".swiper-pagination",
+clickable: true,
+}
+});
+
+// Fade-in
+const faders = document.querySelectorAll(".fade-in");
+const observer = new IntersectionObserver(entries => {
+entries.forEach(entry => {
+if(entry.isIntersecting){
+entry.target.classList.add("visible");
+}
+});
+});
+faders.forEach(fader => observer.observe(fader));
+
+// Resume redirect logic
+const resumeLink = document.getElementById("resume-link");
+resumeLink.addEventListener("click", () => {
+window.open("https://www.mediafire.com/file/3z7sx1tyrbjkd4y/amores+portfolio.pdf/file", "_blank");
+});
 </script>
 
-
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-
-  <script>
-    // Smooth scroll for Projects link
-    document.querySelector('a[href="#projects"]').addEventListener("click", function (e) {
-      e.preventDefault();
-      document.querySelector("#projects").scrollIntoView({ behavior: "smooth" });
-    });
-
-    // Initialize Swiper
-    const swiper = new Swiper(".mySwiper", {
-      slidesPerView: 1,
-      spaceBetween: 30,
-      loop: true,
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-      effect: "slide",
-      speed: 600,
-    });
-
-    // Fade-in on scroll using Intersection Observer
-    document.addEventListener("DOMContentLoaded", function () {
-      const faders = document.querySelectorAll(".fade-in");
-
-      const options = {
-        threshold: 0.3,
-      };
-
-      const appearOnScroll = new IntersectionObserver(function (entries, appearOnScroll) {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) {
-            return;
-          } else {
-            entry.target.classList.add("visible");
-            appearOnScroll.unobserve(entry.target);
-          }
-        });
-      }, options);
-
-      faders.forEach((fader) => {
-        appearOnScroll.observe(fader);
-      });
-    });
-
-    // Mobile menu toggle
-    const menuButton = document.getElementById("mobile-menu-button");
-    const mobileMenu = document.getElementById("mobile-menu");
-
-    menuButton.addEventListener("click", () => {
-      if (mobileMenu.classList.contains("hidden")) {
-        mobileMenu.classList.remove("hidden");
-      } else {
-        mobileMenu.classList.add("hidden");
-      }
-    });
-  </script>
 </body>
 </html>
-
-
-
-
-
-
-
